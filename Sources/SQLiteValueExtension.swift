@@ -105,8 +105,8 @@ extension Float: SQLiteValueStringExpressible {
 
 //=====================Extension Array=====================
 extension Array: Expressible where Element: StringValueExpressible {
-    public var expression: Expression<Void> {
-        return Expression(value: self).expression
+    public var expression: SQLite.Expression<Void> {
+        return SQLite.Expression(value: self).expression
     }
 }
 extension Array: SQLiteValueStringExpressible where Element: StringValueExpressible {
@@ -138,8 +138,8 @@ extension Array: SQLiteValueStringExpressible where Element: StringValueExpressi
 }
 //=====================Extension Dictionary=====================
 extension Dictionary: Expressible where Key: StringValueExpressible, Dictionary.Value: StringValueExpressible {
-    public var expression: Expression<Void> {
-        return Expression(value: self).expression
+    public var expression: SQLite.Expression<Void> {
+        return SQLite.Expression(value: self).expression
     }
 }
 extension Dictionary: SQLiteValueStringExpressible where Dictionary.Key: StringValueExpressible, Dictionary.Value: StringValueExpressible {
